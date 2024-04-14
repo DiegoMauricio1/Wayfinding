@@ -92,6 +92,10 @@ $theme-colors: map-merge($theme-colors, $custom-colors);
 	border-radius: 10px;
 }
 
+.temperature{
+	font-size: 18px;
+}
+
 .language-options {
 	display: none;
 	position: absolute;
