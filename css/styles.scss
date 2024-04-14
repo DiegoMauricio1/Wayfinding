@@ -1,0 +1,175 @@
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
+
+// 2. Include any default variable overrides here
+$link-decoration: none;
+$theme-colors: (
+				"light": #f8f7f7,
+				"dark":       #2e2e2e,
+				"primary":    #ddc3ab,
+				"secondary":  #ede7db,
+				"info":       #38e3fc,
+				"success":    #02bf7d,
+				"warning":    #e1d501,
+				"danger":     #f23900,
+);
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+$custom-colors: (
+	"farve": $cyan-400,
+);
+
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+@import "bootstrapComponents";
+
+// 5. Du kan lave styling her...
+
+*{
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+#weather {
+	position: relative;
+}
+
+.temp {
+	position: absolute;
+	right: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.header{
+	height: 70px;
+	box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.size{
+	width: 40px;
+	height: auto;
+}
+
+.logo{
+	width: 400px;
+	height: auto;
+}
+
+.logoHeader{
+	width: 80px;
+	height: auto;
+	margin-top: -200px;
+}
+
+.back-arrow {
+	font-size: 4rem;
+	cursor: pointer;
+	margin-top: -40px;
+}
+
+.map{
+	width: 300px;
+	height: auto;
+	border-radius: 20px;
+	border: 6px solid #1a1a1a;
+}
+
+.sted{
+	width: 300px;
+	height: auto;
+	border-radius: 10px;
+}
+
+.sted2{
+	width: 420px;
+	height: auto;
+	border-radius: 10px;
+}
+
+.language-options {
+	display: none;
+	position: absolute;
+	background-color: rgb(255, 255, 255);
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+	padding: 8px 0;
+	width: 100px;
+	z-index: 1;
+}
+
+.language-options a {
+	display: block;
+	padding: 8px 16px;
+	text-decoration: none;
+	color: #333;
+	transition: background-color 0.3s;
+}
+
+.language-options a:hover {
+	background-color: #f0f0f0;
+}
+
+.dropbtn {
+	background-color: #a89583;
+	color: white;
+	padding: 6px 12px;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.dropbtn:hover {
+	background-color: rgba(23, 21, 21, 0.3);
+}
+
+.rating {
+	unicode-bidi: bidi-override;
+	direction: rtl;
+}
+
+.rating > input { display: none; }
+.rating > label:before {
+	content: '\2605';
+	margin-right: 5px;
+	font-size: 30px;
+}
+
+.rating > label {
+	display: inline-block;
+	color: #ccc;
+	cursor: pointer;
+}
+
+.rating > input:checked ~ label,
+.rating:not(:checked) > label:hover,
+.rating:not(:checked) > label:hover ~ label {
+	color: #ffdd00;
+}
+
+.rating > input:checked + label:hover,
+.rating > input:checked ~ label:hover,
+.rating > label:hover ~ input:checked ~ label,
+.rating > input:checked ~ label:hover ~ label {
+	color: #ffdd00;
+}
+
+input[type="submit"] {
+	background-color: #ddc3ab;
+	color: #ffffff;
+	border: none;
+	padding: 4px 8px;
+	font-size: 16px;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+input[type="submit"]:hover {
+	background-color: #816c5f; /* Darken the primary color on hover */
+}
